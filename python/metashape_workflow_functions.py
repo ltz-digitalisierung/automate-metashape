@@ -78,7 +78,8 @@ def project_setup(cfg):
 
     ## Project file example to make: "projectID_YYYYMMDDtHHMM-jobID.psx"
     timestamp = stamp_time()
-    run_id = "_".join([run_name,timestamp])
+    #run_id = "_".join([run_name,timestamp]) # original line 
+    run_id = run_name # tmp 
     # TODO: If there is a slurm JobID, append to time (separated with "-", not "_"). This will keep jobs initiated in the same minute distinct
 
     project_file = os.path.join(cfg["project_path"], '.'.join([run_id, 'psx']) )
